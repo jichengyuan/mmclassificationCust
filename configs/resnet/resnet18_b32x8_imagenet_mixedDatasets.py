@@ -41,6 +41,7 @@ test_pipeline = [
     dict(type='ImageToTensor', keys=['img']),
     dict(type='Collect', keys=['img'])
 ]
+classes = ('tench', 'cassette_player', 'church', 'garbage_truck', 'golf_ball', 'parachute')
 data = dict(
     samples_per_gpu=32,
     workers_per_gpu=2,
@@ -48,20 +49,21 @@ data = dict(
         type=dataset_type,
         data_prefix='path/to/images/train',
         ann_file='path/to/annotations/meta/train.txt',
-        pipeline=train_pipeline),
+        pipeline=train_pipeline,
+        classes=classes),
     val=dict(
         type=dataset_type,
         data_prefix='path/to/images/val',
         ann_file='path/to/annotations/meta/val.txt',
-        pipeline=test_pipeline),
+        pipeline=test_pipeline,
+        classes=classes),
     test=dict(
 
         type=dataset_type,
         data_prefix='path/to/images/val',
         ann_file='path/to/annotations/meta/val.txt',
-        pipeline=test_pipeline))
-
-classes = ('tench', 'cassette_player', 'church', 'garbage_truck', 'golf_ball', 'parachute',)
+        pipeline=test_pipeline,
+        classes=classes))
 
 # optimizer
 optimizer = dict(type='SGD', lr=0.1, momentum=0.9, weight_decay=0.0001)
