@@ -47,21 +47,21 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/train',
-        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/train.txt',
+        data_prefix='./train',
+        ann_file='./meta/train.txt',
         pipeline=train_pipeline,
         classes=classes),
     val=dict(
         type=dataset_type,
-        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/val',
-        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/val.txt',
+        data_prefix='./val',
+        ann_file='./meta/val.txt',
         pipeline=test_pipeline,
         classes=classes),
     test=dict(
 
         type=dataset_type,
-        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/val',
-        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/val.txt',
+        data_prefix='./val',
+        ann_file='./val.txt',
         pipeline=test_pipeline,
         classes=classes))
 
