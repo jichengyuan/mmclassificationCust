@@ -1,0 +1,6 @@
+n01440764 tench 0
+n02979186 cassette_player 1
+n03028079 church 2
+n03417042 garbage_truck 3
+n03445777 golf_ball 4
+n03888257 parachute 5
