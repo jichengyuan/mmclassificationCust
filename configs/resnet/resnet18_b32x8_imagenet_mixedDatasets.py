@@ -47,21 +47,21 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        data_prefix='path/to/images/train',
-        ann_file='path/to/annotations/meta/train.txt',
+        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/train',
+        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/train.txt',
         pipeline=train_pipeline,
         classes=classes),
     val=dict(
         type=dataset_type,
-        data_prefix='path/to/images/val',
-        ann_file='path/to/annotations/meta/val.txt',
+        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/val',
+        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/val.txt',
         pipeline=test_pipeline,
         classes=classes),
     test=dict(
 
         type=dataset_type,
-        data_prefix='path/to/images/val',
-        ann_file='path/to/annotations/meta/val.txt',
+        data_prefix='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/val',
+        ann_file='D:\PycharmProjects\mmclassification\data\mixedData\imagenette2_tiny/meta/val.txt',
         pipeline=test_pipeline,
         classes=classes))
 
@@ -70,7 +70,7 @@ optimizer = dict(type='SGD', lr=0.1, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(policy='step', step=[30, 60, 90])
-runner = dict(type='EpochBasedRunner', max_epochs=2)
+runner = dict(type='EpochBasedRunner', max_epochs=10)
 evaluation = dict(interval=1, metric='accuracy')
 
 # checkpoint saving
@@ -89,4 +89,4 @@ log_level = 'INFO'
 load_from = None
 work_dir = None
 resume_from = None
-workflow = [('train', 1), ('val', 1)]
+workflow = [('train', 1)]
