@@ -1,5 +1,5 @@
 _base_ = [
-    '../_base_/datasets/mixed_Datasets.py',
+    '../_base_/datasets/mixed_datasets.py',
     '../_base_/schedules/imagenet_bs256.py', '../_base_/default_runtime.py'
 ]
 
